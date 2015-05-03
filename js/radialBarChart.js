@@ -149,6 +149,9 @@ function radialBarChart() {
       segments
         .enter()
         .append('path')
+        .attr('class', function(d, i) {
+          return 'segment-' + i;
+        })
         .style('fill', function(d, i) {
           if(!barColors) return;
           return barColors[i % barColors.length];
